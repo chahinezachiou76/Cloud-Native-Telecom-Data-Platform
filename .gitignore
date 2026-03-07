@@ -1,0 +1,18 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+*.tfplan
+
+# Executable files
+terraform.exe
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+
+# Infrastructure Lock files
+.terraform.tfstate.lock.info

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telecom-processor
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: telecom
+  template:
+    metadata:
+      labels:
+        app: telecom
+    spec:
+      containers:
+      - name: telecom-container
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: telecom-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: telecom
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

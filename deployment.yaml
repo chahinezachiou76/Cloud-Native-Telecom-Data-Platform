@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: isp-optimizer-deployment
+spec:
+  replicas: 2 # سنطلب من كوبرنيتيس تشغيل نسختين لضمان عدم التوقف
+  selector:
+    matchLabels:
+      app: isp-optimizer
+  template:
+    metadata:
+      labels:
+        app: isp-optimizer
+    spec:
+      containers:
+      - name: isp-container
+        image: isp-optimizer-image
+        imagePullPolicy: Never # نخبر كوبرنيتيس أن يأخذ الصورة من جهازك مباشرة
