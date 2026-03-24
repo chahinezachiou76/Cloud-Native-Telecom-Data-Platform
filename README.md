@@ -24,12 +24,7 @@ Data Collection: Prometheus scrapes real-time metrics from the Python exporter e
 Visualization: Grafana transforms raw time-series data into intuitive, actionable dashboards (Real-time Green Graph).
 
 Cloud Storage: Integrated with AWS S3 for log archiving and AWS DynamoDB for fast metadata storage.
- <details>
-  <summary><b>Click to view detailed grafana dashboard </b></summary>
-  <br>
-  <img src="grafana.png" width="100%">
-</details>
-
+ 
 
  Tech Stack
 Cloud: AWS (S3, DynamoDB)
@@ -55,5 +50,34 @@ Self-Healing: Kubernetes ensures the data simulator is always running.
 
 Scalability: Designed to handle increasing data loads by scaling pods within the cluster.
 
-📈 Dashboard Preview
+Dashboard Preview
 The platform features a Real-time Green Time-Series Graph that tracks cumulative network requests, providing a clear visual of traffic growth and system stability.
+---
+
+##  Phase 2: FinOps & Cost Optimization (Cloud Cost Sentinel)
+
+> **Objective:** Reduce AWS infrastructure costs by **30-40%** through automated governance and resource lifecycle management.
+
+###  Key Performance Indicators (KPIs)
+| Metric | Before Optimization | After Optimization | Saving % |
+| :--- | :--- | :--- | :--- |
+| **Idle EBS Volumes** | $15 - $20/mo | $0/mo | **100%** |
+| **Dev Environment** | 24/7 Running | 10/5 Scheduled | **~65%** |
+| **Unused Elastic IPs** | ~$4/mo per IP | $0/mo | **100%** |
+| **Overall Monthly Bill** | Estimated $100 | Estimated $62 | **38%** |
+
+###  Technical Implementation
+* **Budget Governance:** Implemented **AWS Budgets** via Terraform with SNS alerts triggered at **80%** of the threshold to prevent "Cloud Sprawl".
+* **Automated Cleanup (The Sentinel):** A Python-based **AWS Lambda** engine using `boto3` that identifies and terminates orphaned resources (Unattached EBS, Idle ELB).
+* **Nightly Scheduling:** Automated "Stop-at-Night" policy for all instances tagged as `Environment: Dev`, drastically reducing compute costs during non-business hours.
+* **CI/CD Integration:** The FinOps scan is integrated into **GitHub Actions**, running every 24 hours to ensure continuous "Cost Hygiene".
+
+###  Monitoring & Observability
+Integrated **Grafana** (see `grafana-simple.yaml`) to visualize real-time resource utilization vs. cost, ensuring that optimization does not impact the **Telecom Data Platform** performance.
+<details>
+  <summary><b>Click to view detailed grafana dashboard </b></summary>
+  <br>
+  <img src="grafana.png" width="100%">
+</details>
+
+--
