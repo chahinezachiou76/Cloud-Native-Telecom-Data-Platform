@@ -24,6 +24,12 @@ Data Collection: Prometheus scrapes real-time metrics from the Python exporter e
 Visualization: Grafana transforms raw time-series data into intuitive, actionable dashboards (Real-time Green Graph).
 
 Cloud Storage: Integrated with AWS S3 for log archiving and AWS DynamoDB for fast metadata storage.
+ <details>
+  <summary><b>Click to view detailed grafana dashboard </b></summary>
+  <br>
+  <img src="grafana.png" width="100%">
+</details>
+
 
  Tech Stack
 Cloud: AWS (S3, DynamoDB)
