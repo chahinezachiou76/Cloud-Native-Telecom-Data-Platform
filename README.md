@@ -3,7 +3,7 @@ Cloud-Native Telecom Data Platform Monitoring Architecture
  <details>
   <summary><b>Click to view detailed Architecture Diagram</b></summary>
   <br>
-  <img src="drawio.pncloud native telecom data platform monitoring architecture.drawio.png" width="100%">
+  <img src="cloud native telecom data platform monitoring architecture.drawio.png" width="100%">
 </details>
 
 This project demonstrates a robust, scalable, and automated Data Monitoring Pipeline tailored for the Telecommunications industry. It simulates real-time network traffic and user activities, processes this data through a cloud-native environment, and provides deep visual insights into network health.
