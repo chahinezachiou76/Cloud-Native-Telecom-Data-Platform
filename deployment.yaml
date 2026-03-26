@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: isp-optimizer-deployment
 spec:
-  replicas: 2 # سنطلب من كوبرنيتيس تشغيل نسختين لضمان عدم التوقف
+  replicas: 2 
   selector:
     matchLabels:
       app: isp-optimizer
@@ -15,4 +15,4 @@ spec:
       containers:
       - name: isp-container
         image: isp-optimizer-image
-        imagePullPolicy: Never # نخبر كوبرنيتيس أن يأخذ الصورة من جهازك مباشرة
+        imagePullPolicy: Never 

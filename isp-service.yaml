@@ -4,9 +4,9 @@ metadata:
   name: isp-loadbalancer
 spec:
   selector:
-    app: isp-optimizer # نفس الاسم الموجود في الـ Deployment
+    app: isp-optimizer 
   ports:
     - protocol: TCP
-      port: 80         # المنفذ الخارجي
-      targetPort: 5000 # منفذ التطبيق
+      port: 80         
+      targetPort: 5000  
   type: LoadBalancer

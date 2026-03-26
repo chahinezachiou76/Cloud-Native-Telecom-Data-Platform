@@ -1,6 +1,5 @@
 import boto3
 
-# إعداد الاتصال بـ LocalStack
 REGION = "us-east-1"
 ENDPOINT = "http://localhost:4566"
 
@@ -13,11 +12,9 @@ dynamodb = boto3.resource(
 )
 
 def show_results():
-    # اسم الجدول الذي أنشأتِه بـ Terraform
     table = dynamodb.Table('TelecomNetworkMetrics')
     
     try:
-        # قراءة البيانات (Scan)
         response = table.scan()
         items = response.get('Items', [])
         

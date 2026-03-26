@@ -3,11 +3,9 @@ import pandas as pd
 import random
 import time
 
-# --- الإعدادات المطلوبة لتجاوز الخطأ ---
 REGION = "us-east-1"
 ENDPOINT = "http://localhost:4566"
 
-# تعريف الموارد مع تحديد المنطقة والمفاتيح (ضروري جداً)
 dynamodb = boto3.resource(
     'dynamodb', 
     endpoint_url=ENDPOINT, 
